@@ -1,0 +1,29 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    margin: 10px;
+    transition: width 1s linear;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.flex:hover {
+    width:20rem;
+}
+
+.flex2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex3{
+    display: flex;
+    flex-direction: row;
+    padding:5px
+}
+.flex3 ul {
+    padding-left: 0!important;
+}
+.flex3 li {
+    list-style: none;
+}
