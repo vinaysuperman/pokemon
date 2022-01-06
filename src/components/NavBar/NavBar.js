@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar style={{backgroundColor:'#FFBA00'}}>
       <Container >
       <Navbar.Brand href="#home">
         <img

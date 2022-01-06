@@ -3,16 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner'
 import Cards from '../../utils/Card/Cards';
 import classes from './MainSection.module.css';
+import {getAllFunction,getAllFeatures} from '../../service/ApiService/ApiService'
 
 const MainSection = () => {
   const [allData, setAllData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchDetails = async () => {
-      setLoading(true);
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
-      const response = await res.json();
-      const data = response.results;
+      setLoading(true); 
+      const data= await getAllFunction('https://pokeapi.co/api/v2/pokemon?limit=20');
       await getPersonDetail(data);
       setLoading(false);
     }
@@ -24,8 +23,7 @@ const MainSection = () => {
   const getPersonDetail = async (data) => {
     let pData = await Promise.all(
       data.map(async (e) => {
-        let res = await fetch(e.url);
-        const data = await res.json();
+        let data=await getAllFeatures(e.url);
         return data
       })
     )
